@@ -11,6 +11,9 @@ add_library(VectorUInt "./src/VectorUInt.cpp")
 target_include_directories(
     VectorUInt PRIVATE include   
 )
+target_precompile_headers(
+    VectorUInt PRIVATE "include/stdafx.h"
+)
 
 add_library(MatrixUInt "./src/MatrixUInt.cpp")
 target_include_directories(MatrixUInt 
@@ -19,9 +22,13 @@ target_include_directories(MatrixUInt
 target_link_libraries(MatrixUInt 
     PRIVATE VectorUInt 
 )
-
-# file(GLOB TARGET_SRC "main.cpp")
+target_precompile_headers(
+    MatrixUInt PRIVATE "include/stdafx.h"
+)
 
 add_executable(main "./src/main.cpp")
 target_include_directories(main PRIVATE include)
 target_link_libraries(main PRIVATE MatrixUInt)
+target_precompile_headers(
+    main PRIVATE "include/stdafx.h"
+)
