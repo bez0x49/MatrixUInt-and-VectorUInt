@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.18.0)
 project(Lab4 
     VERSION 0.1.0 
     LANGUAGES CXX
-    DESCRIPTION "Lab for overloading operators and associated array"
+    DESCRIPTION "Overloading operators for matrix and vector"
 )
 
 set(CMAKE_CXX_STANDARD 17)
