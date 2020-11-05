@@ -1,5 +1,5 @@
-#include "VectorUInt.hpp"
 #include "stdafx.h"
+#include "VectorUInt.hpp"
 
 VectorUInt::VectorUInt(size_t size, uint value)
 try
