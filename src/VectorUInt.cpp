@@ -1,5 +1,5 @@
-#include "stdafx.h"
 #include "VectorUInt.hpp"
+#include "stdafx.h"
 
 VectorUInt::VectorUInt(size_t size, uint value)
 try
@@ -256,11 +256,15 @@ VectorUInt VectorUInt::operator%(uint rhs) const
 
 VectorUInt& VectorUInt::operator=(const VectorUInt& rhs)
 {
+    if (this == &rhs)
+        return *this;
+
     if (allocator != nullptr)
         delete[] allocator;
 
     codeError = rhs.codeError;
     size = rhs.size;
+    allocator = new uint[size];
     for (size_t i = 0; i < size; i++)
         allocator[i] = rhs.allocator[i];
 
@@ -491,6 +495,7 @@ std::ostream& operator<<(std::ostream& os, const VectorUInt& rhs)
 {
     for (size_t i = 0; i < rhs.len(); i++)
         os << rhs[i] << ' ';
+    os << '\n';
     return os;
 }
 

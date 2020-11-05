@@ -34,6 +34,7 @@ try
     {
         UIntArray[i] = VectorUInt(columns, value);
     }
+    numMatrices++;
 }
 catch (const std::exception& e)
 {
@@ -569,7 +570,7 @@ std::ostream& operator<<(std::ostream& os, const MatrixUInt& rhs)
 {
     for (size_t i = 0; i < rhs.size; i++)
     {
-        os << rhs.UIntArray[i] << '\n';
+        os << rhs.UIntArray[i];
     }
     return os;
 }
