@@ -631,3 +631,13 @@ bool operator<=(const MatrixUInt& lhs, const MatrixUInt& rhs)
 {
     return !(lhs > rhs);
 }
+
+void* MatrixUInt::operator new(size_t size)
+{
+    return ::new MatrixUInt();
+}
+
+void MatrixUInt::operator delete(void* pointer)
+{
+    free(pointer);
+}

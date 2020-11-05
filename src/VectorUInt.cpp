@@ -561,3 +561,13 @@ bool operator<=(const VectorUInt& lhs, const VectorUInt& rhs)
 {
     return !(lhs > rhs);
 }
+
+void* VectorUInt::operator new(size_t size)
+{
+    return ::new VectorUInt();
+}
+
+void VectorUInt::operator delete(void* pointer)
+{
+    free(pointer);
+}

@@ -132,4 +132,7 @@ class VectorUInt
     friend bool operator>=(const VectorUInt& lhs, const VectorUInt& rhs);
     friend bool operator<(const VectorUInt& lhs, const VectorUInt& rhs);
     friend bool operator<=(const VectorUInt& lhs, const VectorUInt& rhs);
+
+    void* operator new(size_t size);
+    void operator delete(void* pointer);
 };

@@ -176,6 +176,9 @@ class MatrixUInt
 
     // TODO: overloading operator *, *= for VectorUInt
 
+    void* operator new(size_t size);
+    void operator delete(void *pointer);
+
   public:
     /// Count of matrices
     static size_t numMatrices;
