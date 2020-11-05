@@ -12,6 +12,10 @@ int main()
 
     VectorUInt C = B - A;
 
+    VectorUInt *D = new VectorUInt;
+    std::cout << *D << std::endl;
+    delete D;
+
     std::cout << C << std::endl;
     std::cout << ++C << std::endl;
 
