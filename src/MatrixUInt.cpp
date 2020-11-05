@@ -1,5 +1,5 @@
-#include "MatrixUInt.hpp"
 #include "stdafx.h"
+#include "MatrixUInt.hpp"
 
 // Count of matrices
 size_t MatrixUInt::numMatrices = 0;
@@ -32,9 +32,8 @@ try
 {
     for (size_t i = 0; i < size; i++)
     {
-        UIntArray[i] = VectorUInt(n, value);
+        UIntArray[i] = VectorUInt(columns, value);
     }
-    numMatrices++;
 }
 catch (const std::exception& e)
 {
@@ -55,11 +54,11 @@ try
     n(object.n),
     codeError(object.codeError)
 {
-    numMatrices++;
     for (size_t i = 0; i < size; i++)
     {
         UIntArray[i] = object.UIntArray[i];
     }
+    numMatrices++;
 }
 catch (const std::exception& e)
 {
@@ -68,7 +67,6 @@ catch (const std::exception& e)
         delete[] UIntArray;
         UIntArray = nullptr;
     }
-    numMatrices--;
     codeError = Error::Memory;
     std::cerr << "CTOR copy: " << e.what() << std::endl;
 }

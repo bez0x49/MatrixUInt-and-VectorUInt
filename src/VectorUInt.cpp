@@ -20,7 +20,7 @@ catch (const std::exception& e)
         allocator = nullptr;
     }
     codeError = Error::Memory;
-    std::cout << "CTOR caught: " << e.what() << std::endl;
+    std::cerr << "CTOR caught: " << e.what() << std::endl;
 }
 
 VectorUInt::VectorUInt()

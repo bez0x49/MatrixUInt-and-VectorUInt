@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "VectorUInt.hpp"
 #include "MatrixUInt.hpp"
 
 int main()
@@ -15,8 +14,6 @@ int main()
     
     std::cout << C << std::endl;
     std::cout << ++C << std::endl;
-
-    std:: cout << "T" << std::endl;
 
     MatrixUInt M{5, 5, 5};
     MatrixUInt Q{5, 5, 6};
